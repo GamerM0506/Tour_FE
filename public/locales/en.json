@@ -1,0 +1,68 @@
+
+{
+  "Navigation": {
+    "home": "Home",
+    "tours": "Tours", 
+    "about": "About",
+    "journal": "Journal",
+    "book_now": "Book Now",
+    "explore": "Explore",
+    "language": "Language",
+    "home_desc": "Discover Vietnam",
+    "tours_desc": "Curated Experiences", 
+    "about_desc": "Our Story",
+    "journal_desc": "Travel Stories"
+  },
+   "Hero": {
+    "title": "Discover the Untouched Vietnam",
+    "subtitle": "The Art of Travel",
+    "description": "Experience unique journeys designed for free-spirited souls and refined tastes.",
+    "ctaText": "Start Your Journey"
+  },
+  "Contact": {
+    "phone": "+84 123 456 789",
+    "email": "hello@randomtours.com"
+  },
+    "Philosophy": {
+    "subtitle": "Our Philosophy",
+    "title": "Not just travel, it's a return.",
+    "description": "We believe true luxury is not in gold-plated hotels, but in the moment you touch ancient moss or breathe the pure mountain air.",
+    "features": {
+      "sustainable": {
+        "title": "Sustainable",
+        "desc": "We are committed to green tourism, respecting nature and indigenous communities."
+      },
+      "tailorMade": {
+        "title": "Tailor-made", 
+        "desc": "Each journey is a unique work, designed specifically according to your personality."
+      },
+      "authentic": {
+        "title": "Authentic",
+        "desc": "Deep connection with local culture, away from crowded tourist spots."
+      }
+    },
+    "cta": {
+      "title": "Ready for an authentic journey?",
+      "description": "Let's create your personalized Vietnam experience together.",
+      "button": "Start Planning"
+    }
+  },
+  "FeaturedTours": {
+    "title": "Most Loved Journeys",
+    "subtitle": "Curated Collections",
+    "viewAll": "View All Tours",
+    "contactExpert": "Contact Our Expert",
+    "scheduleCall": "Schedule a Call"
+  },
+  "Footer": {
+    "newsletter_title": "Stay Inspired",
+    "newsletter_desc": "Join our community of travelers. Get curated stories, exclusive offers, and travel inspiration delivered to your inbox.",
+    "email_placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "explore": "Explore",
+    "contact": "Contact Us",
+    "address": "123 Travel Street, Hanoi, Vietnam",
+    "rights": "All rights reserved."
+  }
+
+}
