@@ -3,7 +3,6 @@ import { Link } from "@/i18n/routing";
 import { NavItem as NavItemType } from "../types";
 import { Compass, MapPin, Users, BookOpen, Globe } from "lucide-react";
 import { LangSwitcher } from "../lang-switcher";
-import { Button } from "@/core/components/ui/button";
 
 interface IPadNavProps {
   navItems: NavItemType[];

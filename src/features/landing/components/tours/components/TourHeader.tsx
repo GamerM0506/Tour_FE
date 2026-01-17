@@ -22,10 +22,8 @@ export const TourHeader = ({
       className
     )}>
       <div className="max-w-3xl">
-        {/* Decorative line */}
         <div className="w-16 h-0.5 bg-gradient-to-r from-terracotta to-forest mb-4 rounded-full" />
-        
-        {/* Subtitle */}
+
         <div className="flex items-center gap-3 mb-3">
           <Compass className="w-5 h-5 text-terracotta" />
           <span className="text-terracotta text-sm font-bold tracking-[0.3em] uppercase">
@@ -33,18 +31,15 @@ export const TourHeader = ({
           </span>
         </div>
         
-        {/* Title */}
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-jet font-medium leading-tight">
           {title}
         </h2>
         
-        {/* Description */}
         <p className="mt-4 text-lg text-jet/60 leading-relaxed max-w-2xl">
           Khám phá những hành trình độc đáo được thiết kế riêng bởi đội ngũ chuyên gia của chúng tôi
         </p>
       </div>
       
-      {/* View All Button - Desktop */}
       {showViewAllButton && (
         <Button 
           variant="outline"

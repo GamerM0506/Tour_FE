@@ -32,24 +32,20 @@ export const FeaturedTours = ({
         className
       )}
     >
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-terracotta/20 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-forest/20 to-transparent rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
         <TourHeader
           title={title || t("title") || "Những hành trình được yêu thích nhất"}
           subtitle={subtitle || t("subtitle") || "Curated Collections"}
           showViewAllButton={showViewAllButton}
         />
 
-        {/* Tours Grid */}
         <ToursGrid tours={displayedTours} />
 
-        {/* View All Button - Mobile & Alternative */}
         {showViewAllButton && (
           <div className="mt-12 text-center">
             <Button
@@ -59,7 +55,6 @@ export const FeaturedTours = ({
               Xem tất cả Tour
             </Button>
             
-            {/* View All with stats - Desktop alternative */}
             <div className="hidden md:flex items-center justify-center gap-8 mt-16">
               <div className="text-center">
                 <div className="font-serif text-5xl font-bold text-terracotta">50+</div>
@@ -81,7 +76,6 @@ export const FeaturedTours = ({
           </div>
         )}
 
-        {/* CTA Section */}
         <div className="mt-20 pt-20 border-t border-jet/10">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="font-serif text-3xl md:text-4xl text-jet mb-6">

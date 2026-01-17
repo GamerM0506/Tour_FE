@@ -1,6 +1,6 @@
 import { Hero } from "@/features/landing/components/hero";
 import { Philosophy } from "@/features/landing/components/philosophy";
-import { FeaturedTours } from "@/features/tours/components/featuredTours";
+import { FeaturedTours } from "@/features/landing/components/tours";
 
 export default function HomePage() {
   return (

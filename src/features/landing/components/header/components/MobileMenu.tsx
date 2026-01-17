@@ -1,4 +1,3 @@
-// components/Header/components/MobileMenu.tsx
 import { cn } from "@/core/utils/cn";
 import { MobileMenuProps } from "../types";
 import { X, Compass, MapPin, Users, BookOpen, ArrowRight } from "lucide-react";

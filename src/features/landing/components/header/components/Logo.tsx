@@ -59,7 +59,6 @@ export const Logo = ({
 
     return (
         <Link href="/" className={cn("flex items-center gap-3 group z-[60]", className)}>
-            {/* Logo normal size */}
             <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-jet/10 shadow-sm">
                 <Image
                     src="Thi%E1%BA%BFt_k%E1%BA%BF_ch%C6%B0a_c%C3%B3_t%C3%AAn_1080x1080_fq0bpa.png"

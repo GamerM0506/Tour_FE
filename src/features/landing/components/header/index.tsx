@@ -1,4 +1,3 @@
-// components/Header/index.tsx - Cập nhật
 "use client";
 
 import { useTranslations } from "next-intl";

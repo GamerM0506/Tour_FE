@@ -7,7 +7,7 @@ const withNextIntl = createNextIntlPlugin(
 
 const nextConfig: NextConfig = {
   images: {
-     qualities: [60, 75, 80, 85],
+     qualities: [60, 75, 80, 85], 
     loader: 'custom',
     loaderFile: './src/core/utils/cloudinary-loader.ts',
     remotePatterns: [

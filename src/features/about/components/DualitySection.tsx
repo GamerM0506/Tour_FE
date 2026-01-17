@@ -1,0 +1,38 @@
+"use client";
+
+import { Sparkles, Map } from "lucide-react";
+
+export const DualitySection = () => {
+  return (
+    <section className="py-20 md:py-32 bg-sand-light">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+          {/* Random */}
+          <div className="relative group p-8 border border-forest/10 rounded-2xl hover:bg-white transition-all duration-500 hover:shadow-xl">
+            <div className="w-12 h-12 bg-terracotta/10 text-terracotta rounded-full flex items-center justify-center mb-6">
+              <Sparkles size={24} />
+            </div>
+            <h2 className="font-serif text-4xl text-forest mb-4">Random</h2>
+            <p className="text-jet/70 leading-relaxed text-lg">
+              Represents the joy of discovery, the unexpected alley, the hidden
+              table, the unplanned conversation. It's the magic that happens
+              when you let go.
+            </p>
+          </div>
+
+          {/* Tailored */}
+          <div className="relative group p-8 border border-forest/10 rounded-2xl hover:bg-white transition-all duration-500 hover:shadow-xl md:translate-y-12">
+            <div className="w-12 h-12 bg-forest/10 text-forest rounded-full flex items-center justify-center mb-6">
+              <Map size={24} />
+            </div>
+            <h2 className="font-serif text-4xl text-forest mb-4">Tailored</h2>
+            <p className="text-jet/70 leading-relaxed text-lg">
+              Reflects our promise to shape each journey around you — your pace,
+              your curiosity, your dietary needs, and your personal interests.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

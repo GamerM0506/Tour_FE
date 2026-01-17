@@ -1,4 +1,3 @@
-// components/Footer/components/NewsletterSection.tsx
 import { Button } from "@/core/components/ui/button";
 import { Input } from "@/core/components/ui/input";
 import { cn } from "@/core/utils/cn";
@@ -31,7 +30,7 @@ export const NewsletterSection = ({ className }: NewsletterSectionProps) => {
       "border-b border-sand/10 pb-16 mb-16",
       className
     )}>
-      {/* Background decorative elements */}
+
       <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-terracotta/5 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-sand/5 to-transparent rounded-full blur-3xl" />
       
@@ -71,7 +70,6 @@ export const NewsletterSection = ({ className }: NewsletterSectionProps) => {
                   )}
                   required
                 />
-                {/* Success message */}
                 {isSubscribed && (
                   <div className="absolute -bottom-10 left-0 text-green-400 text-sm flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
@@ -96,8 +94,6 @@ export const NewsletterSection = ({ className }: NewsletterSectionProps) => {
                 {t("subscribe") || "Subscribe"}
               </Button>
             </div>
-            
-            {/* Privacy note */}
             <p className="text-sand/40 text-xs mt-4 text-center sm:text-left">
               By subscribing, you agree to our Privacy Policy. We respect your inbox.
             </p>
