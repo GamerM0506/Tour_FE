@@ -2,6 +2,7 @@ import { DesktopNavProps } from "../types";
 import { Compass, MapPin, Users, BookOpen } from "lucide-react";
 import { cn } from "@/core/utils/cn";
 import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 const iconMap = {
     home: Compass,
@@ -11,10 +12,13 @@ const iconMap = {
 };
 
 export const DesktopNav = ({ navItems, pathname }: DesktopNavProps) => {
+    const t = useTranslations("Navigation");
+
     return (
         <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
-                const Icon = iconMap[item.label.toLowerCase() as keyof typeof iconMap];
+                const iconKey = item.key as keyof typeof iconMap;
+                const Icon = iconMap[iconKey];
                 const isActive = pathname === item.href;
 
                 return (
@@ -46,7 +50,7 @@ export const DesktopNav = ({ navItems, pathname }: DesktopNavProps) => {
                         </div>
 
                         <span className="text-sm font-bold tracking-wide uppercase relative">
-                            {item.label}
+                            {t(item.key)}
                             <span className={cn(
                                 "absolute -bottom-1 left-0 w-0 h-0.5 bg-terracotta",
                                 "transition-all duration-300",

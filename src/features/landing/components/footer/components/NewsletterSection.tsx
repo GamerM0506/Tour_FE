@@ -10,7 +10,7 @@ interface NewsletterSectionProps {
 }
 
 export const NewsletterSection = ({ className }: NewsletterSectionProps) => {
-  const t = useTranslations("Footer");
+  const t = useTranslations("Footer.newsletter");
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -30,25 +30,24 @@ export const NewsletterSection = ({ className }: NewsletterSectionProps) => {
       "border-b border-sand/10 pb-16 mb-16",
       className
     )}>
-
+      {/* Background blobs giữ nguyên */}
       <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-terracotta/5 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-sand/5 to-transparent rounded-full blur-3xl" />
-      
+
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
         <div className="max-w-2xl text-center lg:text-left">
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-terracotta/10 rounded-full mb-6">
             <span className="text-terracotta text-sm font-bold tracking-widest uppercase">
-              Exclusive Updates
+              {t("badge")}
             </span>
           </div>
-          
+
           <h3 className="font-serif text-4xl lg:text-5xl text-sand mb-4 leading-tight">
-            {t("newsletter_title") || "Stay Inspired"}
+            {t("title")}
           </h3>
-          
+
           <p className="text-sand/60 text-lg font-light leading-relaxed">
-            {t("newsletter_desc") || "Join our community of travelers. Get curated stories, exclusive offers, and travel inspiration delivered to your inbox."}
+            {t("desc")}
           </p>
         </div>
 
@@ -60,7 +59,7 @@ export const NewsletterSection = ({ className }: NewsletterSectionProps) => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t("email_placeholder") || "Your email address"}
+                  placeholder={t("placeholder")}
                   className={cn(
                     "bg-transparent border-sand/30",
                     "text-sand placeholder:text-sand/40",
@@ -73,12 +72,12 @@ export const NewsletterSection = ({ className }: NewsletterSectionProps) => {
                 {isSubscribed && (
                   <div className="absolute -bottom-10 left-0 text-green-400 text-sm flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                    Thank you for subscribing!
+                    {t("success")}
                   </div>
                 )}
               </div>
-              
-              <Button 
+
+              <Button
                 type="submit"
                 className={cn(
                   "bg-gradient-to-r from-terracotta to-amber-600",
@@ -91,11 +90,11 @@ export const NewsletterSection = ({ className }: NewsletterSectionProps) => {
                 )}
               >
                 <Send size={18} />
-                {t("subscribe") || "Subscribe"}
+                {t("button")}
               </Button>
             </div>
             <p className="text-sand/40 text-xs mt-4 text-center sm:text-left">
-              By subscribing, you agree to our Privacy Policy. We respect your inbox.
+              {t("disclaimer")}
             </p>
           </form>
         </div>

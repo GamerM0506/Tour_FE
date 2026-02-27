@@ -1,14 +1,14 @@
 export interface NavItem {
-    label: string;
+    key: "home" | "tours" | "about" | "journal";
     href: string;
 }
 
 export interface NavItemProps {
-  item: NavItem;
-  isActive: boolean;
-  className?: string;
-  variant?: "desktop" | "mobile";
-  onClick?: () => void; 
+    item: NavItem;
+    isActive: boolean;
+    className?: string;
+    variant?: "desktop" | "mobile";
+    onClick?: () => void;
 }
 
 export interface HeaderProps {

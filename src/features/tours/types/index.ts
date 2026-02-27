@@ -1,40 +1,78 @@
-export interface Tour {
-    id: string;
+export enum TourStatus {
+    DRAFT = 'DRAFT',
+    PUBLISHED = 'PUBLISHED',
+    HIDDEN = 'HIDDEN',
+}
+
+export enum TourCategory {
+    FOOD_TOUR = 'FOOD_TOUR',
+    WALKING_TOUR = 'WALKING_TOUR',
+    WORKSHOP = 'WORKSHOP',
+    TRIP = 'TRIP',
+    SERVICE = 'SERVICE',
+}
+
+export interface PricingTier {
+    minGuests: number;
+    pricePerGuest: number;
+}
+
+export interface Surcharge {
+    name: string;
+    amount: number;
+}
+
+export interface TourPricing {
+    basePrice: number;
+    currency: string;
+    isFree: boolean;
+    tiers?: PricingTier[];
+    surcharges?: Surcharge[];
+}
+
+export interface TourStep {
+    order: number;
     title: string;
     description?: string;
-    location: string;
-    region?: string;
-    price: number;
-    originalPrice?: number;
-    currency: string;
-    duration: string;
-    days: number;
-    nights: number;
-    rating: number;
-    reviewCount: number;
-    image: string;
     images?: string[];
-    tags: string[];
-    category: string[];
-    difficulty?: 'Easy' | 'Moderate' | 'Challenging';
-    highlights?: string[];
-    inclusions?: string[];
-    exclusions?: string[];
-    createdAt?: Date;
-    updatedAt?: Date;
 }
 
-export interface FilterOptions {
-    categories: string[];
-    durations: string[];
-    priceRange: [number, number];
-    difficulties: string[];
-    regions: string[];
+export interface TourItinerary {
+    _steps: TourStep[];
 }
 
-export interface SortOption {
-    label: string;
-    value: string;
-    field: string;
-    order: 'asc' | 'desc';
+export interface Tour {
+    id: string;
+    name: string;
+    slug: string;
+    description: string;
+    category: TourCategory;
+    status: TourStatus;
+    durationHours: number;
+    pickupAvailable: boolean;
+    meetingPoint: string;
+    wheelchairAccessible: boolean;
+    pricing: TourPricing;
+    itinerary: TourItinerary;
+    inclusions: string[];
+    exclusions: string[];
+    images: string[];
+    createdAt: string;
+    updatedAt: string;
+}
+
+export interface GetToursRequestDto {
+    page?: number;
+    limit?: number;
+    search?: string;
+    status?: TourStatus;
+}
+
+export interface PaginatedResponse<T> {
+    data: T[];
+    meta: {
+        total: number;
+        page: number;
+        lastPage: number;
+    };
 }

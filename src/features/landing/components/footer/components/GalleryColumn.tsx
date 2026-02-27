@@ -1,12 +1,15 @@
 import { cn } from "@/core/utils/cn";
 import Image from "next/image";
 import { Camera } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface GalleryColumnProps {
   className?: string;
 }
 
 export const GalleryColumn = ({ className }: GalleryColumnProps) => {
+  const t = useTranslations("Footer.gallery");
+
   const galleryImages = [
     { id: 1, src: "Du-Lich-Vinh-Ha-Long-01_zcblkv.jpg", alt: "Ha Long Bay" },
     { id: 2, src: "Du-Lich-Vinh-Ha-Long-01_zcblkv.jpg", alt: "Sapa Terraces" },
@@ -21,7 +24,7 @@ export const GalleryColumn = ({ className }: GalleryColumnProps) => {
       <div className="flex items-center gap-2 mb-6">
         <Camera className="text-terracotta" size={18} />
         <h4 className="font-bold uppercase tracking-widest text-sm text-terracotta">
-          From Our Travelers
+          {t("title")}
         </h4>
       </div>
 
@@ -50,7 +53,6 @@ export const GalleryColumn = ({ className }: GalleryColumnProps) => {
               "bg-gradient-to-br from-terracotta/20 to-forest/20",
               "group-hover:scale-110 transition-transform duration-700"
             )} />
-
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <Camera size={20} className="text-white" />
             </div>

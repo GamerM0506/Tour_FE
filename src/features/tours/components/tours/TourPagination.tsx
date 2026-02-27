@@ -3,6 +3,8 @@
 import { cn } from "@/core/utils/cn";
 import { Button } from "@/core/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
+
 interface TourPaginationProps {
     className?: string;
     currentPage: number;
@@ -16,6 +18,8 @@ export const TourPagination = ({
     totalPages,
     onPageChange
 }: TourPaginationProps) => {
+    const t = useTranslations("Tours.Pagination");
+
     const getPageNumbers = (): (number | string)[] => {
         const delta = 2;
         const range: number[] = [];
@@ -61,7 +65,7 @@ export const TourPagination = ({
                 className="flex items-center gap-2 border-sand-light text-jet hover:bg-forest hover:text-white"
             >
                 <ChevronLeft size={16} />
-                Previous
+                {t("prev")}
             </Button>
 
             <div className="flex items-center gap-1">
@@ -100,7 +104,7 @@ export const TourPagination = ({
                 disabled={currentPage === totalPages}
                 className="flex items-center gap-2 border-sand-light text-jet hover:bg-forest hover:text-white"
             >
-                Next
+                {t("next")}
                 <ChevronRight size={16} />
             </Button>
         </div>

@@ -43,10 +43,10 @@ export const Header = ({ className }: HeaderProps) => {
   }, []);
 
   const navItems: NavItem[] = [
-    { label: t("home"), href: "/" },
-    { label: t("tours"), href: "/tours" },
-    { label: t("about"), href: "/about" },
-    { label: t("journal"), href: "/journal" },
+    { key: "home", href: "/" },
+    { key: "tours", href: "/tours" },
+    { key: "about", href: "/about" },
+    { key: "journal", href: "/journal" },
   ];
 
   const isTablet = deviceType === 'tablet';

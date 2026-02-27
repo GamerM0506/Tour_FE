@@ -20,7 +20,8 @@ export const MobileMenu = ({
     navItems,
     pathname
 }: MobileMenuProps) => {
-    const t = useTranslations("Navigation");
+    const tNav = useTranslations("Navigation");
+    const tBrand = useTranslations("Brand");
 
     return (
         <div
@@ -33,14 +34,16 @@ export const MobileMenu = ({
                 <div className="flex items-center gap-3">
                     <div className="relative w-10 h-10 rounded-full overflow-hidden border border-jet/10">
                         <Image
-                            src="Thi%E1%BA%BFt_k%E1%BA%BF_ch%C6%B0a_c%C3%B3_t%C3%AAn_1080x1080_fq0bpa.png"
-                            alt="Logo"
+                            src="/images/logo.png"
+                            alt={tBrand("logo_alt")}
                             fill
                             className="object-cover bg-white"
                             sizes="40px"
                         />
                     </div>
-                    <span className="font-serif text-xl font-bold uppercase text-jet">Random Tours</span>
+                    <span className="font-serif text-xl font-bold uppercase text-jet">
+                        {tBrand("name")}
+                    </span>
                 </div>
 
                 <button
@@ -54,7 +57,7 @@ export const MobileMenu = ({
 
             <div className="flex-1 flex flex-col justify-center px-6 gap-2">
                 {navItems.map((item) => {
-                    const Icon = iconMap[item.label.toLowerCase() as keyof typeof iconMap];
+                    const Icon = iconMap[item.key];
                     const isActive = pathname === item.href;
 
                     return (
@@ -86,10 +89,11 @@ export const MobileMenu = ({
                                         "font-serif text-2xl font-medium transition-colors",
                                         isActive ? "text-terracotta" : "text-jet"
                                     )}>
-                                        {item.label}
+                                        {/* Dịch label */}
+                                        {tNav(item.key)}
                                     </span>
                                     <span className="text-sm text-jet/60 mt-1">
-                                        {t(`${item.label.toLowerCase()}_desc`)}
+                                        {tNav(`${item.key}_desc`)}
                                     </span>
                                 </div>
                             </div>
@@ -103,7 +107,7 @@ export const MobileMenu = ({
             <div className="p-8 bg-sand-light border-t border-jet/10 flex flex-col gap-6">
                 <div className="flex items-center justify-between">
                     <span className="text-sm font-medium uppercase text-jet/60 tracking-widest">
-                        Language
+                        {tNav("language")}
                     </span>
                     <LangSwitcher isScrolled={true} />
                 </div>
@@ -112,7 +116,7 @@ export const MobileMenu = ({
                     size="lg"
                     className="w-full rounded-full bg-jet text-sand hover:bg-terracotta text-lg font-serif py-6"
                 >
-                    {t("book_now")}
+                    {tNav("book_now")}
                 </Button>
             </div>
         </div>

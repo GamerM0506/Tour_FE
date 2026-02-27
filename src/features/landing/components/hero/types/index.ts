@@ -1,11 +1,23 @@
 export interface HeroProps {
     className?: string;
-    title?: string;
-    subtitle?: string;
-    description?: string;
-    ctaText?: string;
     imageUrl?: string;
-    videoUrl?: string;
     overlayOpacity?: number;
     showScrollIndicator?: boolean;
+    onCtaClick?: () => void;
+}
+
+export interface HeroBackgroundProps {
+    imageUrl?: string;
+    overlayOpacity?: number;
+    className?: string;
+}
+
+export interface HeroContentProps {
+    className?: string;
+    onCtaClick?: () => void;
+}
+
+export interface ScrollIndicatorProps {
+    className?: string;
+    targetId?: string;
 }

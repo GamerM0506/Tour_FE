@@ -1,39 +1,34 @@
+"use client";
+
 import { Button } from "@/core/components/ui/button";
 import { cn } from "@/core/utils/cn";
 import { ArrowRight, Sparkles } from "lucide-react";
-
+import { useTranslations } from "next-intl";
 interface HeroContentProps {
-    title?: string;
-    subtitle?: string;
-    description?: string;
-    ctaText?: string;
     className?: string;
     onCtaClick?: () => void;
 }
 
 export const HeroContent = ({
-    title = "Discover the Untouched Vietnam",
-    subtitle = "The Art of Travel",
-    description = "Trải nghiệm những hành trình độc bản được thiết kế riêng cho tâm hồn yêu tự do và sự tinh tế.",
-    ctaText = "Start Your Journey",
     className,
     onCtaClick
 }: HeroContentProps) => {
-    const titleLines = title.split(', ');
+    const t = useTranslations("Hero");
+    const titleLines = t("title").split(', ');
 
     return (
         <div
-  className={cn(
-    "relative z-20 w-full",
-    "container mx-auto px-4",
-    "flex flex-col items-center justify-start",
-    "min-h-[calc(100vh-80px)]",
-    "pt-28 md:pt-32 lg:pt-36",
-    "pb-32 md:pb-40",
-    "text-center",
-    className
-  )}
->
+            className={cn(
+                "relative z-20 w-full",
+                "container mx-auto px-4",
+                "flex flex-col items-center justify-start",
+                "min-h-[calc(100vh-80px)]",
+                "pt-28 md:pt-32 lg:pt-36",
+                "pb-32 md:pb-40",
+                "text-center",
+                className
+            )}
+        >
             <div className="absolute -inset-x-20 -inset-y-40 bg-gradient-to-r from-terracotta/5 via-transparent to-forest/5 blur-3xl rounded-full" />
             <div className="relative space-y-8 md:space-y-12 max-w-6xl">
                 <div className="overflow-hidden">
@@ -46,7 +41,7 @@ export const HeroContent = ({
                     )}>
                         <Sparkles className="w-4 h-4 text-terracotta animate-pulse" />
                         <span className="text-sand text-sm md:text-base tracking-[0.3em] uppercase font-medium">
-                            {subtitle}
+                            {t("subtitle")}
                         </span>
                         <Sparkles className="w-4 h-4 text-terracotta animate-pulse" />
                     </div>
@@ -85,7 +80,7 @@ export const HeroContent = ({
                         "font-light leading-relaxed md:leading-loose",
                         "animate-in slide-in-from-bottom-full duration-1000 delay-700 fill-mode-forwards"
                     )}>
-                        {description}
+                        {t("description")}
                     </p>
                 </div>
 
@@ -109,7 +104,7 @@ export const HeroContent = ({
                         <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000" />
 
                         <span className="relative flex items-center gap-3">
-                            {ctaText}
+                            {t("cta_start")}
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                         </span>
                     </Button>
@@ -127,15 +122,15 @@ export const HeroContent = ({
                             "hover:border-sand"
                         )}
                     >
-                        Explore Tours
+                        {t("cta_explore")}
                     </Button>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-xl mx-auto pt-12 animate-in fade-in duration-1000 delay-1200">
                     {[
-                        { value: "500+", label: "Curated Experiences" },
-                        { value: "98%", label: "Client Satisfaction" },
-                        { value: "15+", label: "Years Excellence" }
+                        { value: "500+", label: t("stats.experiences") },
+                        { value: "98%", label: t("stats.satisfaction") },
+                        { value: "15+", label: t("stats.excellence") }
                     ].map((stat, index) => (
                         <div key={index} className="text-center">
                             <div className="font-serif text-3xl md:text-4xl text-sand font-bold">

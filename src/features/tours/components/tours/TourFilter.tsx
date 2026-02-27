@@ -15,6 +15,7 @@ import {
     Users
 } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface TourFilterProps {
     className?: string;
@@ -22,39 +23,41 @@ interface TourFilterProps {
 }
 
 export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
+    const t = useTranslations("Tours.Filter");
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000]);
     const [duration, setDuration] = useState<string[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
     const [difficulties, setDifficulties] = useState<string[]>([]);
     const [regions, setRegions] = useState<string[]>([]);
 
+    // Cấu hình options (label lấy từ JSON)
     const durationOptions = [
-        { id: "1-3", label: "1-3 Days", value: "1-3" },
-        { id: "4-7", label: "4-7 Days", value: "4-7" },
-        { id: "7+", label: "7+ Days", value: "7+" },
+        { id: "1-3", labelKey: "days_1_3", value: "1-3" },
+        { id: "4-7", labelKey: "days_4_7", value: "4-7" },
+        { id: "7+", labelKey: "days_7_plus", value: "7+" },
     ];
 
     const categoryOptions = [
-        { id: "adventure", label: "Adventure", icon: TrendingUp },
-        { id: "luxury", label: "Luxury Cruise", icon: DollarSign },
-        { id: "cultural", label: "Cultural", icon: Users },
-        { id: "beach", label: "Beach", icon: Users },
-        { id: "trekking", label: "Trekking", icon: TrendingUp },
-        { id: "culinary", label: "Culinary", icon: Users },
+        { id: "adventure", labelKey: "adventure", icon: TrendingUp },
+        { id: "luxury", labelKey: "luxury", icon: DollarSign },
+        { id: "cultural", labelKey: "cultural", icon: Users },
+        { id: "beach", labelKey: "beach", icon: Users },
+        { id: "trekking", labelKey: "trekking", icon: TrendingUp },
+        { id: "culinary", labelKey: "culinary", icon: Users },
     ];
 
     const difficultyOptions = [
-        { id: "easy", label: "Easy" },
-        { id: "moderate", label: "Moderate" },
-        { id: "challenging", label: "Challenging" },
+        { id: "easy", labelKey: "easy" },
+        { id: "moderate", labelKey: "moderate" },
+        { id: "challenging", labelKey: "challenging" },
     ];
 
     const regionOptions = [
-        { id: "north", label: "Northern Vietnam" },
-        { id: "central", label: "Central Vietnam" },
-        { id: "south", label: "Southern Vietnam" },
-        { id: "mekong", label: "Mekong Delta" },
-        { id: "highlands", label: "Central Highlands" },
+        { id: "north", labelKey: "north" },
+        { id: "central", labelKey: "central" },
+        { id: "south", labelKey: "south" },
+        { id: "mekong", labelKey: "mekong" },
+        { id: "highlands", labelKey: "highlands" },
     ];
 
     const handleReset = () => {
@@ -73,14 +76,13 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
     };
 
     const handleApply = () => {
-        const filters = {
+        onFilterChange?.({
             priceRange,
             duration,
             categories,
             difficulties,
             regions,
-        };
-        onFilterChange?.(filters);
+        });
     };
 
     const FilterSection = ({
@@ -114,18 +116,18 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
             <div className="flex items-center justify-between pb-4 border-b border-sand-light">
                 <div className="flex items-center gap-2">
                     <Filter className="w-5 h-5 text-terracotta" />
-                    <h3 className="font-serif text-xl font-bold text-forest">Filters</h3>
+                    <h3 className="font-serif text-xl font-bold text-forest">{t("title")}</h3>
                 </div>
                 <button
                     onClick={handleReset}
                     className="text-xs text-terracotta hover:underline uppercase font-medium flex items-center gap-1"
                 >
                     <X className="w-3 h-3" />
-                    Reset All
+                    {t("reset")}
                 </button>
             </div>
 
-            <FilterSection title="Price Range" icon={DollarSign}>
+            <FilterSection title={t("sections.price")} icon={DollarSign}>
                 <div className="space-y-4">
                     <Slider
                         value={priceRange}
@@ -142,7 +144,7 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
                 </div>
             </FilterSection>
 
-            <FilterSection title="Duration" icon={Calendar}>
+            <FilterSection title={t("sections.duration")} icon={Calendar}>
                 <div className="space-y-2">
                     {durationOptions.map((option) => (
                         <div key={option.id} className="flex items-center space-x-2">
@@ -150,26 +152,19 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
                                 id={`duration-${option.id}`}
                                 checked={duration.includes(option.value)}
                                 onCheckedChange={(checked) => {
-                                    setDuration(
-                                        checked
-                                            ? [...duration, option.value]
-                                            : duration.filter((d) => d !== option.value)
-                                    );
+                                    setDuration(checked ? [...duration, option.value] : duration.filter((d) => d !== option.value));
                                 }}
                                 className="border-sand-light data-[state=checked]:bg-terracotta data-[state=checked]:border-terracotta"
                             />
-                            <Label
-                                htmlFor={`duration-${option.id}`}
-                                className="text-sm text-jet/80 cursor-pointer font-normal"
-                            >
-                                {option.label}
+                            <Label htmlFor={`duration-${option.id}`} className="text-sm text-jet/80 cursor-pointer font-normal">
+                                {t(`options.${option.labelKey}`)}
                             </Label>
                         </div>
                     ))}
                 </div>
             </FilterSection>
 
-            <FilterSection title="Travel Style" icon={Users}>
+            <FilterSection title={t("sections.style")} icon={Users}>
                 <div className="space-y-2">
                     {categoryOptions.map((option) => {
                         const Icon = option.icon;
@@ -179,20 +174,13 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
                                     id={`category-${option.id}`}
                                     checked={categories.includes(option.id)}
                                     onCheckedChange={(checked) => {
-                                        setCategories(
-                                            checked
-                                                ? [...categories, option.id]
-                                                : categories.filter((c) => c !== option.id)
-                                        );
+                                        setCategories(checked ? [...categories, option.id] : categories.filter((c) => c !== option.id));
                                     }}
                                     className="border-sand-light data-[state=checked]:bg-terracotta data-[state=checked]:border-terracotta"
                                 />
-                                <Label
-                                    htmlFor={`category-${option.id}`}
-                                    className="text-sm text-jet/80 cursor-pointer font-normal flex items-center gap-2"
-                                >
+                                <Label htmlFor={`category-${option.id}`} className="text-sm text-jet/80 cursor-pointer font-normal flex items-center gap-2">
                                     <Icon className="w-3 h-3" />
-                                    {option.label}
+                                    {t(`options.${option.labelKey}`)}
                                 </Label>
                             </div>
                         );
@@ -200,7 +188,7 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
                 </div>
             </FilterSection>
 
-            <FilterSection title="Difficulty" icon={TrendingUp}>
+            <FilterSection title={t("sections.difficulty")} icon={TrendingUp}>
                 <div className="space-y-2">
                     {difficultyOptions.map((option) => (
                         <div key={option.id} className="flex items-center space-x-2">
@@ -208,11 +196,7 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
                                 id={`difficulty-${option.id}`}
                                 checked={difficulties.includes(option.id)}
                                 onCheckedChange={(checked) => {
-                                    setDifficulties(
-                                        checked
-                                            ? [...difficulties, option.id]
-                                            : difficulties.filter((d) => d !== option.id)
-                                    );
+                                    setDifficulties(checked ? [...difficulties, option.id] : difficulties.filter((d) => d !== option.id));
                                 }}
                                 className="border-sand-light data-[state=checked]:bg-terracotta data-[state=checked]:border-terracotta"
                             />
@@ -225,14 +209,14 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
                                     option.id === 'challenging' && "text-red-700 bg-red-50"
                                 )}
                             >
-                                {option.label}
+                                {t(`options.${option.labelKey}`)}
                             </Label>
                         </div>
                     ))}
                 </div>
             </FilterSection>
 
-            <FilterSection title="Region" icon={MapPin}>
+            <FilterSection title={t("sections.region")} icon={MapPin}>
                 <div className="space-y-2">
                     {regionOptions.map((option) => (
                         <div key={option.id} className="flex items-center space-x-2">
@@ -240,19 +224,12 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
                                 id={`region-${option.id}`}
                                 checked={regions.includes(option.id)}
                                 onCheckedChange={(checked) => {
-                                    setRegions(
-                                        checked
-                                            ? [...regions, option.id]
-                                            : regions.filter((r) => r !== option.id)
-                                    );
+                                    setRegions(checked ? [...regions, option.id] : regions.filter((r) => r !== option.id));
                                 }}
                                 className="border-sand-light data-[state=checked]:bg-terracotta data-[state=checked]:border-terracotta"
                             />
-                            <Label
-                                htmlFor={`region-${option.id}`}
-                                className="text-sm text-jet/80 cursor-pointer font-normal"
-                            >
-                                {option.label}
+                            <Label htmlFor={`region-${option.id}`} className="text-sm text-jet/80 cursor-pointer font-normal">
+                                {t(`options.${option.labelKey}`)}
                             </Label>
                         </div>
                     ))}
@@ -263,13 +240,13 @@ export const TourFilter = ({ className, onFilterChange }: TourFilterProps) => {
                 onClick={handleApply}
                 className="w-full bg-gradient-to-r from-forest to-terracotta text-white hover:opacity-90 transition-all py-6 text-base font-medium"
             >
-                Apply Filters
+                {t("apply")}
             </Button>
 
             {(duration.length > 0 || categories.length > 0 || difficulties.length > 0 || regions.length > 0) && (
                 <div className="pt-4 border-t border-sand-light">
                     <div className="flex items-center justify-between text-sm">
-                        <span className="text-jet/60">Active filters:</span>
+                        <span className="text-jet/60">{t("active_count")}</span>
                         <span className="font-medium text-forest">
                             {duration.length + categories.length + difficulties.length + regions.length}
                         </span>

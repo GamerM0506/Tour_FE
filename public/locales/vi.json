@@ -1,68 +1,295 @@
-
 {
+  "Brand": {
+    "name": "Random Tours",
+    "tagline": "Du lịch Việt Nam",
+    "logo_alt": "Logo Random Tours"
+  },
   "Navigation": {
-    "home": "Home",
-    "tours": "Tours", 
-    "about": "About",
-    "journal": "Journal",
-    "book_now": "Book Now",
-    "explore": "Explore",
-    "language": "Language",
-    "home_desc": "Discover Vietnam",
-    "tours_desc": "Curated Experiences", 
-    "about_desc": "Our Story",
-    "journal_desc": "Travel Stories"
+    "home": "Trang chủ",
+    "home_desc": "Bắt đầu hành trình khám phá",
+    "tours": "Tour du lịch",
+    "tours_desc": "Các gói tour hấp dẫn nhất",
+    "about": "Về chúng tôi",
+    "about_desc": "Gặp gỡ đội ngũ hướng dẫn viên",
+    "journal": "Nhật ký",
+    "journal_desc": "Những câu chuyện trên đường đi",
+    "language": "Ngôn ngữ",
+    "book_now": "Đặt ngay"
   },
-   "Hero": {
-    "title": "Discover the Untouched Vietnam",
-    "subtitle": "The Art of Travel",
-    "description": "Experience unique journeys designed for free-spirited souls and refined tastes.",
-    "ctaText": "Start Your Journey"
+  "Hero": {
+    "background_alt": "Phong cảnh du lịch cao cấp Việt Nam",
+    "subtitle": "Nghệ thuật của sự xê dịch",
+    "title": "Khám phá vẻ đẹp bất tận, của đất nước Việt Nam",
+    "description": "Trải nghiệm những hành trình độc bản được thiết kế riêng cho tâm hồn yêu tự do và sự tinh tế",
+    "cta_start": "Bắt đầu hành trình",
+    "cta_explore": "Khám phá Tour",
+    "scroll_text": "Cuộn xuống",
+    "scroll_aria": "Cuộn xuống phần tiếp theo",
+    "stats": {
+      "experiences": "Trải nghiệm độc đáo",
+      "satisfaction": "Khách hàng hài lòng",
+      "excellence": "Năm kinh nghiệm"
+    }
   },
-  "Contact": {
-    "phone": "+84 123 456 789",
-    "email": "hello@randomtours.com"
-  },
-    "Philosophy": {
-    "subtitle": "Our Philosophy",
-    "title": "Not just travel, it's a return.",
-    "description": "We believe true luxury is not in gold-plated hotels, but in the moment you touch ancient moss or breathe the pure mountain air.",
+  "Philosophy": {
+    "subtitle": "Triết lý của chúng tôi",
+    "title": "Không chỉ là du lịch, đó là sự trở về.",
+    "description": "Chúng tôi tin rằng sự sang trọng đích thực không nằm ở khách sạn dát vàng, mà nằm ở khoảnh khắc bạn chạm tay vào rêu phong cổ kính, hay hít thở bầu không khí tinh khiết của núi rừng.",
+    "explore_more": "Khám phá thêm",
     "features": {
       "sustainable": {
-        "title": "Sustainable",
-        "desc": "We are committed to green tourism, respecting nature and indigenous communities."
+        "title": "Bền vững",
+        "desc": "Chúng tôi cam kết du lịch xanh, tôn trọng thiên nhiên và cộng đồng bản địa."
       },
       "tailorMade": {
-        "title": "Tailor-made", 
-        "desc": "Each journey is a unique work, designed specifically according to your personality."
+        "title": "Thiết kế riêng",
+        "desc": "Mỗi hành trình là một tác phẩm độc bản, được thiết kế riêng theo cá tính của bạn."
       },
       "authentic": {
-        "title": "Authentic",
-        "desc": "Deep connection with local culture, away from crowded tourist spots."
+        "title": "Chân thực",
+        "desc": "Kết nối sâu sắc với văn hóa địa phương, tránh xa những điểm đến xô bồ."
       }
     },
     "cta": {
-      "title": "Ready for an authentic journey?",
-      "description": "Let's create your personalized Vietnam experience together.",
-      "button": "Start Planning"
+      "title": "Sẵn sàng cho một hành trình chân thực?",
+      "description": "Hãy cùng thiết kế trải nghiệm Việt Nam của riêng bạn.",
+      "button": "Lên kế hoạch ngay"
     }
   },
   "FeaturedTours": {
-    "title": "Most Loved Journeys",
-    "subtitle": "Curated Collections",
-    "viewAll": "View All Tours",
-    "contactExpert": "Contact Our Expert",
-    "scheduleCall": "Schedule a Call"
+    "subtitle": "Bộ sưu tập tuyển chọn",
+    "title": "Những hành trình được yêu thích nhất",
+    "description": "Khám phá những hành trình độc đáo được thiết kế riêng bởi đội ngũ chuyên gia của chúng tôi.",
+    "view_all": "Xem tất cả Tour",
+    "explore_all": "Khám phá tất cả",
+    "card": {
+      "reviews": "đánh giá",
+      "per_person": "/ khách"
+    },
+    "stats": {
+      "unique_tours": "Tour Độc Đáo",
+      "satisfaction": "Hài Lòng"
+    },
+    "custom": {
+      "title": "Chưa tìm thấy hành trình ưng ý?",
+      "desc": "Chuyên gia du lịch của chúng tôi sẽ thiết kế lịch trình riêng biệt dành cho bạn.",
+      "contact_btn": "Liên hệ chuyên gia",
+      "schedule_btn": "Đặt lịch tư vấn"
+    }
   },
-   "Footer": {
-    "newsletter_title": "Stay Inspired",
-    "newsletter_desc": "Join our community of travelers. Get curated stories, exclusive offers, and travel inspiration delivered to your inbox.",
-    "email_placeholder": "Your email address",
-    "subscribe": "Subscribe",
-    "explore": "Explore",
-    "contact": "Contact Us",
-    "address": "123 Travel Street, Hanoi, Vietnam",
-    "rights": "All rights reserved."
+  "Footer": {
+    "brand": {
+      "tagline": "Tinh hoa du lịch Việt",
+      "description": "Chúng tôi kiến tạo những hành trình phi thường kết nối bạn với vẻ đẹp chân thực, những viên ngọc ẩn giấu và văn hóa sống động của Việt Nam.",
+      "follow": "Theo dõi chúng tôi",
+      "since": "Từ năm 2010",
+      "tours_count": "100+ Tour",
+      "happy_travelers": "Khách hàng",
+      "satisfaction": "Hài lòng"
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "address": "123 Phố Du Lịch, Hà Nội, Việt Nam",
+      "quick_form": "Form liên hệ nhanh",
+      "hours": {
+        "weekdays": "Thứ 2 - Thứ 6: 8:00 - 18:00",
+        "weekend": "Thứ 7 - CN: 9:00 - 16:00"
+      }
+    },
+    "explore": {
+      "title": "Khám phá",
+      "company_title": "Công ty",
+      "links": {
+        "destinations": "Điểm đến",
+        "experiences": "Trải nghiệm",
+        "guides": "Cẩm nang du lịch",
+        "story": "Câu chuyện",
+        "team": "Đội ngũ",
+        "partners": "Đối tác",
+        "careers": "Tuyển dụng",
+        "press": "Báo chí",
+        "contact": "Liên hệ"
+      }
+    },
+    "gallery": {
+      "title": "Góc nhìn lữ khách"
+    },
+    "newsletter": {
+      "badge": "Cập nhật mới nhất",
+      "title": "Giữ nguồn cảm hứng",
+      "desc": "Tham gia cộng đồng du lịch. Nhận những câu chuyện tuyển chọn, ưu đãi độc quyền và cảm hứng du lịch gửi tới hòm thư của bạn.",
+      "placeholder": "Địa chỉ email của bạn",
+      "button": "Đăng ký",
+      "success": "Cảm ơn bạn đã đăng ký!",
+      "disclaimer": "Bằng cách đăng ký, bạn đồng ý với Chính sách bảo mật của chúng tôi."
+    },
+    "copyright": {
+      "rights": "Bảo lưu mọi quyền.",
+      "made_with": "Được làm bằng",
+      "in": "tại Việt Nam",
+      "privacy": "Chính sách bảo mật",
+      "terms": "Điều khoản dịch vụ",
+      "cookies": "Chính sách Cookie",
+      "accessibility": "Khả năng truy cập"
+    }
+  },
+  "Tours": {
+    "Hero": {
+      "badge": "50+ Điểm đến độc đáo",
+      "title": "Khám phá Việt Nam",
+      "description": "Những hành trình tuyển chọn kết nối bạn với trải nghiệm chân thực",
+      "search_placeholder": "Tìm điểm đến, tour hoặc trải nghiệm...",
+      "filter_btn": "Bộ lọc",
+      "popular": "Phổ biến:",
+      "locations": {
+        "halong": "Vịnh Hạ Long",
+        "sapa": "Sapa",
+        "hoian": "Hội An",
+        "mekong": "Miền Tây",
+        "danang": "Đà Nẵng"
+      },
+      "stats": {
+        "tours": "Tour tuyển chọn",
+        "destinations": "Điểm đến",
+        "satisfaction": "Hài lòng",
+        "support": "Hỗ trợ"
+      }
+    },
+    "Filter": {
+      "title": "Bộ lọc",
+      "reset": "Đặt lại",
+      "apply": "Áp dụng",
+      "active_count": "Đang chọn:",
+      "sections": {
+        "price": "Khoảng giá",
+        "duration": "Thời gian",
+        "style": "Loại hình",
+        "difficulty": "Mức độ",
+        "region": "Vùng miền"
+      },
+      "options": {
+        "days_1_3": "1-3 Ngày",
+        "days_4_7": "4-7 Ngày",
+        "days_7_plus": "7+ Ngày",
+        "adventure": "Khám phá",
+        "luxury": "Du thuyền cao cấp",
+        "cultural": "Văn hóa",
+        "beach": "Biển đảo",
+        "trekking": "Leo núi",
+        "culinary": "Ẩm thực",
+        "easy": "Dễ",
+        "moderate": "Trung bình",
+        "challenging": "Thách thức",
+        "north": "Miền Bắc",
+        "central": "Miền Trung",
+        "south": "Miền Nam",
+        "mekong": "Đồng bằng sông Cửu Long",
+        "highlands": "Tây Nguyên"
+      }
+    },
+    "Sort": {
+      "found": "{count, plural, =0 {Không tìm thấy tour} other {Tìm thấy # tour}}",
+      "showing": "Hiển thị {from}-{to} trên {total}",
+      "label": "Sắp xếp:",
+      "options": {
+        "popular": "Phổ biến nhất",
+        "rating": "Đánh giá cao nhất",
+        "price_low": "Giá: Thấp đến Cao",
+        "price_high": "Giá: Cao đến Thấp",
+        "duration": "Thời lượng",
+        "newest": "Mới nhất"
+      }
+    },
+    "Card": {
+      "hours": "giờ",
+      "free": "Miễn phí",
+      "free_tag": "Tour miễn phí",
+      "from": "Từ",
+      "details": "Chi tiết",
+      "view_itinerary": "Xem lịch trình",
+      "accessible": "Hỗ trợ xe lăn"
+    },
+    "Pagination": {
+      "prev": "Trước",
+      "next": "Sau"
+    },
+    "Sidebar": {
+      "help_title": "Cần hỗ trợ?",
+      "help_desc": "Chuyên gia du lịch của chúng tôi luôn sẵn sàng giúp bạn tìm chuyến đi hoàn hảo.",
+      "contact_btn": "Liên hệ chuyên gia"
+    },
+    "Status": {
+      "loading": "Đang tải những hành trình tuyệt vời...",
+      "error_title": "Rất tiếc! Đã có lỗi xảy ra",
+      "error_desc": "Chúng tôi không thể tải danh sách tour. Vui lòng thử lại sau.",
+      "reload_btn": "Tải lại trang",
+      "empty_title": "Không tìm thấy tour nào",
+      "empty_desc": "Hãy thử điều chỉnh bộ lọc hoặc từ khóa tìm kiếm",
+      "reset_filters_btn": "Đặt lại bộ lọc"
+    },
+    "CTA": {
+      "title": "Chưa tìm thấy hành trình ưng ý?",
+      "desc": "Chúng tôi có thể thiết kế lịch trình riêng biệt hoàn toàn theo ý bạn.",
+      "customize_btn": "Thiết kế tour riêng",
+      "schedule_btn": "Đặt lịch tư vấn"
+    }
+  },
+  "TourDetails": {
+    "Itinerary": {
+      "subtitle": "Bản đồ tương tác",
+      "title": "Lộ trình tham quan",
+      "step_label": "Chặng {order}"
+    }
+  },
+  "About": {
+    "Hero": {
+      "badge": "Câu chuyện của chúng tôi",
+      "title": "Hiểu một vùng đất qua",
+      "title_highlight": "những câu chuyện nhỏ thường ngày.",
+      "description": "Random Tailored Tours ra đời từ một niềm tin giản đơn: cách ý nghĩa nhất để hiểu một nơi chốn là thông qua ẩm thực, con người và những câu chuyện hiếm khi xuất hiện trong sách hướng dẫn."
+    },
+    "Duality": {
+      "random_title": "Random",
+      "random_desc": "Đại diện cho niềm vui khám phá, những con hẻm bất ngờ, những chiếc bàn ẩn giấu, những cuộc trò chuyện không định trước. Đó là phép màu xảy ra khi bạn thả lỏng.",
+      "tailored_title": "Tailored",
+      "tailored_desc": "Phản ánh cam kết của chúng tôi trong việc định hình mỗi hành trình quanh bạn — nhịp độ, sự tò mò, nhu cầu ăn uống và sở thích cá nhân của bạn."
+    },
+    "Methodology": {
+      "title": "Thiết kế bởi người địa phương, Hướng dẫn bằng cả trái tim.",
+      "image_alt": "Trải nghiệm lớp học nấu ăn",
+      "flexible_title": "Hành trình vị giác linh hoạt",
+      "flexible_desc": "Thay vì tuân theo thực đơn cố định, chúng tôi thiết kế những hành trình linh hoạt thích ứng với những gì bạn đã trải nghiệm. Mỗi tour tuân theo một tiến trình chu đáo: khai vị, món chính và tráng miệng, cân bằng theo tiêu chuẩn ẩm thực Hà Nội truyền thống.",
+      "hospitality_title": "Lòng hiếu khách cho mọi người",
+      "hospitality_desc": "Lòng hiếu khách phải luôn mang lại cảm giác an toàn, tôn trọng và nhân văn. Đó là lý do tại sao:",
+      "list": {
+        "wheelchair": "Tất cả các lộ trình đều thân thiện với xe lăn.",
+        "dietary": "Chăm sóc đặc biệt với các trường hợp dị ứng & kiêng khem.",
+        "schedule": "Không lịch trình vội vã, không du lịch đại trà."
+      }
+    },
+    "Promise": {
+      "title": "Lời hứa của chúng tôi",
+      "items": {
+        "small_group": {
+          "title": "Nhóm nhỏ",
+          "desc": "Những trải nghiệm được tuyển chọn mang lại cảm giác cá nhân, ấm áp và chân thành."
+        },
+        "honest": {
+          "title": "Kể chuyện trung thực",
+          "desc": "Góc nhìn địa phương chân thực, tôn trọng văn hóa và lịch sử."
+        },
+        "sustainable": {
+          "title": "Bền vững",
+          "desc": "Tôn trọng sức khỏe, môi trường và cộng đồng địa phương."
+        }
+      }
+    },
+    "SisterBrand": {
+      "badge": "Thương hiệu chị em",
+      "brand_name": "Lành.Naturals",
+      "tagline": "\"Hơn cả một chuyến đi — Là sự giao thoa văn hóa.\"",
+      "desc_1": "Lấy cảm hứng từ truyền thống thảo mộc Việt Nam và lối sống tỉnh thức. Lành.Naturals tập trung vào các món ăn nhẹ sạch, được chế biến chu đáo và trà thảo mộc làm từ nguyên liệu địa phương.",
+      "desc_2": "Được thiết kế để dịu nhẹ với cơ thể và phù hợp với du khách có hệ tiêu hóa nhạy cảm. Triết lý chung này ảnh hưởng đến cách chúng tôi suy nghĩ về thực phẩm, sức khỏe và sự quan tâm."
+    }
   }
-
 }

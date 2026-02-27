@@ -4,7 +4,7 @@ import Image from "next/image";
 
 interface VisualBreakProps {
     imageSrc: string;
-    altText: string;
+    altText?: string;
     height?: string;
 }
 
@@ -21,11 +21,7 @@ export const VisualBreak = ({
                 fill
                 priority
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="
-                    (max-width: 640px) 100vw,
-                    (max-width: 1024px) 100vw,
-                    1600px
-                "
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1600px"
                 quality={80}
             />
         </section>

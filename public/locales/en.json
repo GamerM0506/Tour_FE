@@ -1,44 +1,53 @@
-
 {
+  "Brand": {
+    "name": "Random Tours",
+    "tagline": "Vietnam Travel",
+    "logo_alt": "Random Tours Logo"
+  },
   "Navigation": {
     "home": "Home",
-    "tours": "Tours", 
+    "home_desc": "Start your journey here",
+    "tours": "Tours",
+    "tours_desc": "Explore our packages",
     "about": "About",
+    "about_desc": "Meet our team",
     "journal": "Journal",
-    "book_now": "Book Now",
-    "explore": "Explore",
+    "journal_desc": "Read our stories",
     "language": "Language",
-    "home_desc": "Discover Vietnam",
-    "tours_desc": "Curated Experiences", 
-    "about_desc": "Our Story",
-    "journal_desc": "Travel Stories"
+    "book_now": "Book Now"
   },
-   "Hero": {
-    "title": "Discover the Untouched Vietnam",
+  "Hero": {
+    "background_alt": "Vietnam Luxury Travel Landscape",
     "subtitle": "The Art of Travel",
-    "description": "Experience unique journeys designed for free-spirited souls and refined tastes.",
-    "ctaText": "Start Your Journey"
+    "title": "Discover the Untouched Vietnam, Beyond Boundaries",
+    "description": "Experience unique journeys designed specifically for souls who love freedom and sophistication.",
+    "cta_start": "Start Your Journey",
+    "cta_explore": "Explore Tours",
+    "scroll_text": "Scroll",
+    "scroll_aria": "Scroll to next section",
+    "stats": {
+      "experiences": "Curated Experiences",
+      "satisfaction": "Client Satisfaction",
+      "excellence": "Years Excellence"
+    }
   },
-  "Contact": {
-    "phone": "+84 123 456 789",
-    "email": "hello@randomtours.com"
-  },
-    "Philosophy": {
+  "Philosophy": {
     "subtitle": "Our Philosophy",
     "title": "Not just travel, it's a return.",
-    "description": "We believe true luxury is not in gold-plated hotels, but in the moment you touch ancient moss or breathe the pure mountain air.",
+    "description": "We believe true luxury lies not in gold-plated hotels, but in the moment you touch ancient moss or breathe the pure mountain air.",
+    "explore_more": "Explore more",
     "features": {
       "sustainable": {
         "title": "Sustainable",
-        "desc": "We are committed to green tourism, respecting nature and indigenous communities."
+        "desc": "We are committed to green tourism, respecting nature and local communities."
       },
       "tailorMade": {
-        "title": "Tailor-made", 
-        "desc": "Each journey is a unique work, designed specifically according to your personality."
+        "title": "Tailor-made",
+        "desc": "Every journey is a masterpiece tailored specifically to your personality."
       },
       "authentic": {
         "title": "Authentic",
-        "desc": "Deep connection with local culture, away from crowded tourist spots."
+        "desc": "Deep connection with local culture, away from the crowded tourist spots."
       }
     },
     "cta": {
@@ -48,21 +57,239 @@
     }
   },
   "FeaturedTours": {
-    "title": "Most Loved Journeys",
     "subtitle": "Curated Collections",
-    "viewAll": "View All Tours",
-    "contactExpert": "Contact Our Expert",
-    "scheduleCall": "Schedule a Call"
+    "title": "Most Loved Journeys",
+    "description": "Explore unique journeys designed specifically by our team of experts.",
+    "view_all": "View All Tours",
+    "explore_all": "Explore All Tours",
+    "card": {
+      "reviews": "reviews",
+      "per_person": "per person"
+    },
+    "stats": {
+      "unique_tours": "Unique Tours",
+      "satisfaction": "Satisfaction"
+    },
+    "custom": {
+      "title": "Can't find what you're looking for?",
+      "desc": "Our travel experts can create a completely customized itinerary just for you.",
+      "contact_btn": "Contact Our Expert",
+      "schedule_btn": "Schedule a Call"
+    }
   },
   "Footer": {
-    "newsletter_title": "Stay Inspired",
-    "newsletter_desc": "Join our community of travelers. Get curated stories, exclusive offers, and travel inspiration delivered to your inbox.",
-    "email_placeholder": "Your email address",
-    "subscribe": "Subscribe",
-    "explore": "Explore",
-    "contact": "Contact Us",
-    "address": "123 Travel Street, Hanoi, Vietnam",
-    "rights": "All rights reserved."
+    "brand": {
+      "tagline": "Vietnam Travel Excellence",
+      "description": "We craft extraordinary journeys that connect you with Vietnam's authentic beauty, hidden gems, and vibrant culture. Every trip is a story waiting to be written.",
+      "follow": "Follow Our Journey",
+      "since": "Since 2010",
+      "tours_count": "100+ Tours",
+      "happy_travelers": "Happy Travelers",
+      "satisfaction": "Satisfaction"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "123 Travel Street, Hanoi, Vietnam",
+      "quick_form": "Quick Contact Form",
+      "hours": {
+        "weekdays": "Mon - Fri: 8:00 - 18:00",
+        "weekend": "Sat - Sun: 9:00 - 16:00"
+      }
+    },
+    "explore": {
+      "title": "Explore",
+      "company_title": "Company",
+      "links": {
+        "destinations": "Destinations",
+        "experiences": "Experiences",
+        "guides": "Travel Guides",
+        "story": "Our Story",
+        "team": "Our Team",
+        "partners": "Partners",
+        "careers": "Careers",
+        "press": "Press",
+        "contact": "Contact"
+      }
+    },
+    "gallery": {
+      "title": "From Our Travelers"
+    },
+    "newsletter": {
+      "badge": "Exclusive Updates",
+      "title": "Stay Inspired",
+      "desc": "Join our community of travelers. Get curated stories, exclusive offers, and travel inspiration delivered to your inbox.",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "success": "Thank you for subscribing!",
+      "disclaimer": "By subscribing, you agree to our Privacy Policy. We respect your inbox."
+    },
+    "copyright": {
+      "rights": "All rights reserved.",
+      "made_with": "Made with",
+      "in": "in Vietnam",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy",
+      "accessibility": "Accessibility"
+    }
+  },
+  "Tours": {
+    "Hero": {
+      "badge": "50+ Unique Destinations",
+      "title": "Discover Vietnam",
+      "description": "Curated journeys that connect you with authentic experiences",
+      "search_placeholder": "Search destinations, tours, or experiences...",
+      "filter_btn": "Filters",
+      "popular": "Popular:",
+      "locations": {
+        "halong": "Ha Long Bay",
+        "sapa": "Sapa",
+        "hoian": "Hoi An",
+        "mekong": "Mekong",
+        "danang": "Da Nang"
+      },
+      "stats": {
+        "tours": "Curated Tours",
+        "destinations": "Destinations",
+        "satisfaction": "Satisfaction",
+        "support": "Support"
+      }
+    },
+    "Filter": {
+      "title": "Filters",
+      "reset": "Reset All",
+      "apply": "Apply Filters",
+      "active_count": "Active filters:",
+      "sections": {
+        "price": "Price Range",
+        "duration": "Duration",
+        "style": "Travel Style",
+        "difficulty": "Difficulty",
+        "region": "Region"
+      },
+      "options": {
+        "days_1_3": "1-3 Days",
+        "days_4_7": "4-7 Days",
+        "days_7_plus": "7+ Days",
+        "adventure": "Adventure",
+        "luxury": "Luxury Cruise",
+        "cultural": "Cultural",
+        "beach": "Beach",
+        "trekking": "Trekking",
+        "culinary": "Culinary",
+        "easy": "Easy",
+        "moderate": "Moderate",
+        "challenging": "Challenging",
+        "north": "Northern Vietnam",
+        "central": "Central Vietnam",
+        "south": "Southern Vietnam",
+        "mekong": "Mekong Delta",
+        "highlands": "Central Highlands"
+      }
+    },
+    "Sort": {
+      "found": "{count, plural, =0 {No tours} one {1 tour} other {# tours}} found",
+      "showing": "Showing {from}-{to} of {total}",
+      "label": "Sort by:",
+      "options": {
+        "popular": "Most Popular",
+        "rating": "Highest Rated",
+        "price_low": "Price: Low to High",
+        "price_high": "Price: High to Low",
+        "duration": "Duration",
+        "newest": "Newest"
+      }
+    },
+    "Card": {
+      "hours": "hours",
+      "free": "Free",
+      "free_tag": "Free Tour",
+      "from": "From",
+      "details": "Details",
+      "view_itinerary": "View Itinerary",
+      "accessible": "Accessible"
+    },
+    "Pagination": {
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "Sidebar": {
+      "help_title": "Need Help?",
+      "help_desc": "Our travel experts are here to help you find the perfect tour.",
+      "contact_btn": "Contact Expert"
+    },
+    "Status": {
+      "loading": "Loading amazing journeys...",
+      "error_title": "Oops! Something went wrong",
+      "error_desc": "We couldn't load the tours. Please try again later.",
+      "reload_btn": "Reload Page",
+      "empty_title": "No tours found",
+      "empty_desc": "Try adjusting your filters or search terms",
+      "reset_filters_btn": "Reset All Filters"
+    },
+    "CTA": {
+      "title": "Can't find the perfect tour?",
+      "desc": "Our travel experts can create a completely customized itinerary just for you.",
+      "customize_btn": "Customize Your Tour",
+      "schedule_btn": "Schedule Consultation"
+    }
+  },
+  "TourDetails": {
+    "Itinerary": {
+      "subtitle": "Interactive Map",
+      "title": "Journey Roadmap",
+      "step_label": "Step {order}"
+    }
+  },
+  "About": {
+    "Hero": {
+      "badge": "Our Story",
+      "title": "Understanding a place through",
+      "title_highlight": "small everyday stories.",
+      "description": "Random Tailored Tours was born from a simple belief: the most meaningful way to understand a place is through its food, its people, and the stories that rarely make it into guidebooks."
+    },
+    "Duality": {
+      "random_title": "Random",
+      "random_desc": "Represents the joy of discovery, the unexpected alley, the hidden table, the unplanned conversation. It's the magic that happens when you let go.",
+      "tailored_title": "Tailored",
+      "tailored_desc": "Reflects our promise to shape each journey around you — your pace, your curiosity, your dietary needs, and your personal interests."
+    },
+    "Methodology": {
+      "title": "Designed by Locals, Guided with Care.",
+      "image_alt": "Cooking Class Experience",
+      "flexible_title": "Flexible Tasting Journeys",
+      "flexible_desc": "Instead of following a fixed menu, we design flexible journeys that adapt to what you have already tried. Each tour follows a thoughtful progression: appetizers, mains, and dessert, balanced according to traditional Hanoian culinary standards.",
+      "hospitality_title": "Hospitality for Everyone",
+      "hospitality_desc": "Hospitality should always feel safe, respectful, and human. That's why:",
+      "list": {
+        "wheelchair": "All routes are wheelchair-friendly.",
+        "dietary": "Special care with allergies & dietary restrictions.",
+        "schedule": "No rushed schedules, no mass tourism."
+      }
+    },
+    "Promise": {
+      "title": "Our Promise to You",
+      "items": {
+        "small_group": {
+          "title": "Small-Group",
+          "desc": "Curated experiences that feel personal, warm, and genuine."
+        },
+        "honest": {
+          "title": "Honest Storytelling",
+          "desc": "Real local perspectives, respect for culture and history."
+        },
+        "sustainable": {
+          "title": "Sustainable",
+          "desc": "Respect for health, the environment, and local communities."
+        }
+      }
+    },
+    "SisterBrand": {
+      "badge": "Our Sister Brand",
+      "brand_name": "Lành.Naturals",
+      "tagline": "\"More than a tour — A Cultural Exchange.\"",
+      "desc_1": "Inspired by Vietnamese herbal traditions and mindful living. Lành.Naturals focuses on clean, thoughtfully crafted snacks and herbal teas made from local ingredients.",
+      "desc_2": "Designed to be gentle on the body and accessible to travelers with dietary sensitivities. This shared philosophy influences how we think about food, wellness, and care."
+    }
   }
-
 }

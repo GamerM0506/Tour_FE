@@ -1,8 +1,9 @@
 import { cn } from "@/core/utils/cn";
 import { Link } from "@/i18n/routing";
 import { NavItem as NavItemType } from "../types";
-import { Compass, MapPin, Users, BookOpen, Globe } from "lucide-react";
+import { Compass, MapPin, Users, BookOpen } from "lucide-react";
 import { LangSwitcher } from "../lang-switcher";
+import { useTranslations } from "next-intl";
 
 interface IPadNavProps {
   navItems: NavItemType[];
@@ -21,17 +22,18 @@ const iconMap = {
 export const IPadNav = ({
   navItems,
   pathname,
-  bookNowText,
   className
 }: IPadNavProps) => {
+  const t = useTranslations("Navigation");
+
   return (
     <div className={cn(
       "hidden md:flex lg:hidden items-center flex-1",
       className
     )}>
-      <nav className="flex items-center justify-centergap-3 mx-auto">
+      <nav className="flex items-center justify-center gap-3 mx-auto">
         {navItems.map((item) => {
-          const Icon = iconMap[item.label.toLowerCase() as keyof typeof iconMap];
+          const Icon = iconMap[item.key];
 
           return (
             <Link
@@ -55,13 +57,13 @@ export const IPadNav = ({
                 {Icon && <Icon size={22} strokeWidth={1.5} />}
               </div>
               <span className="text-xs font-bold tracking-wide uppercase whitespace-nowrap">
-                {item.label}
+                {t(item.key)}
               </span>
             </Link>
           );
         })}
       </nav>
-          <LangSwitcher isScrolled />
+      <LangSwitcher isScrolled />
     </div>
   );
 };

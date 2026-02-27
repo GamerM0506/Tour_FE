@@ -7,6 +7,7 @@ interface TourHeaderProps {
   className?: string;
   title?: string;
   subtitle?: string;
+  description?: string;
   showViewAllButton?: boolean;
 }
 
@@ -14,6 +15,7 @@ export const TourHeader = ({
   className,
   title = "Những hành trình được yêu thích nhất",
   subtitle = "Curated Collections",
+  description,
   showViewAllButton = true
 }: TourHeaderProps) => {
   return (
@@ -30,18 +32,18 @@ export const TourHeader = ({
             {subtitle}
           </span>
         </div>
-        
+
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-jet font-medium leading-tight">
           {title}
         </h2>
-        
+
         <p className="mt-4 text-lg text-jet/60 leading-relaxed max-w-2xl">
-          Khám phá những hành trình độc đáo được thiết kế riêng bởi đội ngũ chuyên gia của chúng tôi
+          {description}
         </p>
       </div>
-      
+
       {showViewAllButton && (
-        <Button 
+        <Button
           variant="outline"
           className="hidden md:flex items-center gap-2 border-forest/30 text-forest hover:bg-forest hover:text-sand rounded-full px-8 py-6 transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >

@@ -1,19 +1,19 @@
 import { cn } from "@/core/utils/cn";
 import { MapPin, Mail, Phone, Clock, MessageSquare } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/routing"; // Dùng Link từ i18n
 
 interface ContactColumnProps {
   className?: string;
 }
 
 export const ContactColumn = ({ className }: ContactColumnProps) => {
-  const t = useTranslations("Footer");
+  const t = useTranslations("Footer.contact");
 
   const contactItems = [
     {
       icon: MapPin,
-      content: t("address") || "123 Travel Street, Hanoi, Vietnam",
+      content: t("address"),
       href: "#"
     },
     {
@@ -28,8 +28,8 @@ export const ContactColumn = ({ className }: ContactColumnProps) => {
     },
     {
       icon: Clock,
-      content: "Mon - Fri: 8:00 - 18:00",
-      subContent: "Sat - Sun: 9:00 - 16:00"
+      content: t("hours.weekdays"),
+      subContent: t("hours.weekend")
     },
   ];
 
@@ -38,7 +38,7 @@ export const ContactColumn = ({ className }: ContactColumnProps) => {
       <div className="flex items-center gap-2 mb-6">
         <MessageSquare className="text-terracotta" size={18} />
         <h4 className="font-bold uppercase tracking-widest text-sm text-terracotta">
-          {t("contact") || "Contact Us"}
+          {t("title")}
         </h4>
       </div>
 
@@ -55,10 +55,10 @@ export const ContactColumn = ({ className }: ContactColumnProps) => {
             )}>
               <item.icon size={18} className="text-terracotta" />
             </div>
-            
+
             <div className="flex-1">
-              {item.href ? (
-                <Link
+              {item.href && item.href !== "#" ? (
+                <a // Dùng thẻ a cho mailto/tel
                   href={item.href}
                   className={cn(
                     "text-sand/80 hover:text-terracotta",
@@ -67,7 +67,7 @@ export const ContactColumn = ({ className }: ContactColumnProps) => {
                   )}
                 >
                   {item.content}
-                </Link>
+                </a>
               ) : (
                 <div className="text-sand/80 font-medium">{item.content}</div>
               )}
@@ -79,7 +79,7 @@ export const ContactColumn = ({ className }: ContactColumnProps) => {
         ))}
       </div>
 
-     <div className="pt-6 border-t border-sand/10">
+      <div className="pt-6 border-t border-sand/10">
         <Link
           href="/contact"
           className={cn(
@@ -93,7 +93,7 @@ export const ContactColumn = ({ className }: ContactColumnProps) => {
             "group"
           )}
         >
-          <span className="font-medium">Quick Contact Form</span>
+          <span className="font-medium">{t("quick_form")}</span>
           <MessageSquare size={16} className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Link>
       </div>

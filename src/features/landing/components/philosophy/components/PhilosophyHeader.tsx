@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/core/utils/cn";
+import { useTranslations } from "next-intl";
 
 interface PhilosophyHeaderProps {
     className?: string;
@@ -9,10 +12,16 @@ interface PhilosophyHeaderProps {
 
 export const PhilosophyHeader = ({
     className,
-    subtitle = "Our Philosophy",
-    title = "Không chỉ là du lịch, đó là sự trở về.",
-    description = "Chúng tôi tin rằng sự sang trọng đích thực không nằm ở khách sạn dát vàng, mà nằm ở khoảnh khắc bạn chạm tay vào rêu phong cổ kính, hay hít thở bầu không khí tinh khiết của núi rừng."
+    subtitle,
+    title,
+    description
 }: PhilosophyHeaderProps) => {
+    const t = useTranslations("Philosophy");
+
+    // Logic: Nếu có prop truyền vào thì dùng, không thì lấy từ file json
+    const displayTitle = title || t("title");
+    const titleLines = displayTitle.split(', ');
+
     return (
         <div className={cn(
             "max-w-4xl mx-auto text-center mb-16 md:mb-24 relative",
@@ -24,7 +33,7 @@ export const PhilosophyHeader = ({
                 "text-terracotta text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6 block",
                 "inline-block px-4 py-2 bg-terracotta/5 rounded-full"
             )}>
-                {subtitle}
+                {subtitle || t("subtitle")}
             </span>
 
             <h2 className={cn(
@@ -32,7 +41,7 @@ export const PhilosophyHeader = ({
                 "font-serif text-forest font-medium leading-tight mb-8",
                 "relative"
             )}>
-                {title.split(', ').map((line, index, array) => (
+                {titleLines.map((line, index, array) => (
                     <span key={index} className="block">
                         {line}
                         {index < array.length - 1 && ','}
@@ -52,15 +61,11 @@ export const PhilosophyHeader = ({
                     "max-w-3xl mx-auto",
                     "px-4 md:px-0"
                 )}>
-                    {description}
+                    {description || t("description")}
                 </p>
 
-                <div className="absolute -top-8 -left-4 text-terracotta/20 font-serif text-6xl">
-                    "
-                </div>
-                <div className="absolute -bottom-8 -right-4 text-terracotta/20 font-serif text-6xl">
-                    "
-                </div>
+                <div className="absolute -top-8 -left-4 text-terracotta/20 font-serif text-6xl">"</div>
+                <div className="absolute -bottom-8 -right-4 text-terracotta/20 font-serif text-6xl">"</div>
             </div>
         </div>
     );

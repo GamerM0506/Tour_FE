@@ -1,7 +1,10 @@
+"use client";
+
 import { cn } from "@/core/utils/cn";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface LogoProps {
     className?: string;
@@ -14,6 +17,8 @@ export const Logo = ({
     priority = false,
     hideTextOnTablet = true
 }: LogoProps) => {
+    const t = useTranslations("Brand");
+
     const isHomepage = typeof window !== 'undefined' && window.location.pathname === '/';
     const [isTablet, setIsTablet] = useState(false);
 
@@ -31,7 +36,7 @@ export const Logo = ({
     if (isTablet && hideTextOnTablet) {
         return (
             <>
-                <Link href="/" className={cn("flex items-center group z-[60]", className)}> 
+                <Link href="/" className={cn("flex items-center group z-[60]", className)}>
                     <div className="relative w-20 h-20 rounded-full overflow-hidden border border-jet/10 shadow-lg">
                         <Image
                             src="Thi%E1%BA%BFt_k%E1%BA%BF_ch%C6%B0a_c%C3%B3_t%C3%AAn_1080x1080_fq0bpa.png"
@@ -42,17 +47,15 @@ export const Logo = ({
                             sizes="56px"
                         />
                     </div>
-
                 </Link>
                 <div className="flex flex-col">
                     <span className="font-serif text-lg md:text-xl font-semibold tracking-tight uppercase leading-none text-jet">
-                        Random Tours
+                        {t("name")}
                     </span>
                     <span className="text-[7px] tracking-[0.18em] uppercase font-medium text-terracotta hidden md:block">
-                        Vietnam Travel
+                        {t("tagline")}
                     </span>
                 </div>
-
             </>
         );
     }
@@ -66,15 +69,15 @@ export const Logo = ({
                     fill
                     className="object-cover bg-white"
                     priority={priority || isHomepage}
-                    sizes="(max-width: 768px) 40px, 48px"
+                    sizes="56px"
                 />
             </div>
             <div className="flex flex-col">
                 <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter uppercase leading-none text-jet">
-                    Random Tours
+                    {t("name")}
                 </span>
                 <span className="text-[10px] tracking-[0.2em] uppercase font-medium text-terracotta hidden md:block">
-                    Vietnam Travel
+                    {t("tagline")}
                 </span>
             </div>
         </Link>

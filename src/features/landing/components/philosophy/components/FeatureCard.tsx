@@ -1,6 +1,9 @@
+"use client";
+
 import { cn } from "@/core/utils/cn";
 import { Feature } from "../types";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface FeatureCardProps {
     feature: Feature;
@@ -13,9 +16,9 @@ export const FeatureCard = ({
     index,
     className
 }: FeatureCardProps) => {
+    const t = useTranslations("Philosophy");
     const [isHovered, setIsHovered] = useState(false);
     const Icon = feature.icon;
-    const accentColor = feature.accentColor || "terracotta";
 
     return (
         <div
@@ -28,6 +31,7 @@ export const FeatureCard = ({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
+            {/* ... (Giữ nguyên phần Background Card) ... */}
             <div className={cn(
                 "absolute inset-0 rounded-3xl",
                 "bg-gradient-to-br from-sand to-sand",
@@ -54,18 +58,12 @@ export const FeatureCard = ({
             </div>
 
             <div className="relative z-10 p-8 md:p-10 h-full flex flex-col items-center text-center">
+                {/* ... (Giữ nguyên phần Icon) ... */}
                 <div className={cn(
                     "relative mb-8",
                     "transition-all duration-500",
                     "group-hover:scale-110 group-hover:-translate-y-1"
                 )}>
-                    <div className={cn(
-                        "absolute inset-0 rounded-full",
-                        "border-2 border-jet/10",
-                        "transition-all duration-500",
-                        "group-hover:border-terracotta/30 group-hover:scale-125"
-                    )} />
-
                     <div className={cn(
                         "relative w-20 h-20 rounded-full",
                         "flex items-center justify-center",
@@ -75,32 +73,8 @@ export const FeatureCard = ({
                         "group-hover:from-terracotta/10 group-hover:to-forest/10",
                         "group-hover:shadow-lg"
                     )}>
-                        <Icon
-                            size={32}
-                            strokeWidth={1.5}
-                            className={cn(
-                                "text-jet transition-all duration-500",
-                                "group-hover:text-terracotta group-hover:scale-110"
-                            )}
-                        />
+                        <Icon size={32} strokeWidth={1.5} className="text-jet transition-all duration-500 group-hover:text-terracotta group-hover:scale-110" />
                     </div>
-
-                    {[0, 1, 2].map((dot) => (
-                        <div
-                            key={dot}
-                            className={cn(
-                                "absolute w-2 h-2 rounded-full bg-terracotta/30",
-                                "transition-all duration-700",
-                                isHovered ? "opacity-100" : "opacity-0",
-                                dot === 0 && "top-0 left-1/2 -translate-x-1/2 -translate-y-2",
-                                dot === 1 && "top-1/2 -right-1 -translate-y-1/2",
-                                dot === 2 && "bottom-0 left-1/2 -translate-x-1/2 translate-y-2"
-                            )}
-                            style={{
-                                animationDelay: `${dot * 100}ms`
-                            }}
-                        />
-                    ))}
                 </div>
 
                 <h3 className={cn(
@@ -122,7 +96,7 @@ export const FeatureCard = ({
 
                 <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="inline-flex items-center gap-2 text-terracotta font-medium text-sm">
-                        <span>Explore more</span>
+                        <span>{t("explore_more")}</span>
                         <div className="w-6 h-px bg-terracotta/50 transition-all duration-300 group-hover:w-8" />
                     </div>
                 </div>

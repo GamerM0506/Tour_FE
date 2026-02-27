@@ -4,6 +4,7 @@ import { cn } from "@/core/utils/cn";
 import { Button } from "@/core/components/ui/button";
 import { ChevronDown, Grid, List } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface TourSortProps {
     className?: string;
@@ -18,16 +19,17 @@ export const TourSort = ({
     onViewChange,
     totalTours = 0
 }: TourSortProps) => {
+    const t = useTranslations("Tours.Sort");
     const [sortBy, setSortBy] = useState('popular');
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
     const sortOptions = [
-        { value: 'popular', label: 'Most Popular' },
-        { value: 'rating', label: 'Highest Rated' },
-        { value: 'price_low', label: 'Price: Low to High' },
-        { value: 'price_high', label: 'Price: High to Low' },
-        { value: 'duration', label: 'Duration' },
-        { value: 'newest', label: 'Newest' },
+        { value: 'popular', labelKey: 'popular' },
+        { value: 'rating', labelKey: 'rating' },
+        { value: 'price_low', labelKey: 'price_low' },
+        { value: 'price_high', labelKey: 'price_high' },
+        { value: 'duration', labelKey: 'duration' },
+        { value: 'newest', labelKey: 'newest' },
     ];
 
     const handleSortChange = (value: string) => {
@@ -48,11 +50,16 @@ export const TourSort = ({
         )}>
             <div className="flex items-center gap-2">
                 <span className="font-medium text-jet">
-                    {totalTours} {totalTours === 1 ? 'tour' : 'tours'} found
+                    {/* Sử dụng plural của next-intl */}
+                    {t("found", { count: totalTours })}
                 </span>
                 <span className="text-sm text-jet/40">•</span>
                 <span className="text-sm text-jet/60">
-                    Showing 1-{Math.min(totalTours, 12)} of {totalTours}
+                    {t("showing", {
+                        from: Math.min(1, totalTours),
+                        to: Math.min(totalTours, 12),
+                        total: totalTours
+                    })}
                 </span>
             </div>
 
@@ -61,10 +68,7 @@ export const TourSort = ({
                     <Button
                         size="sm"
                         variant={viewMode === 'grid' ? 'default' : 'ghost'}
-                        className={cn(
-                            "px-3",
-                            viewMode === 'grid' && "bg-white text-forest shadow-sm"
-                        )}
+                        className={cn("px-3", viewMode === 'grid' && "bg-white text-forest shadow-sm")}
                         onClick={() => handleViewChange('grid')}
                     >
                         <Grid size={18} />
@@ -72,10 +76,7 @@ export const TourSort = ({
                     <Button
                         size="sm"
                         variant={viewMode === 'list' ? 'default' : 'ghost'}
-                        className={cn(
-                            "px-3",
-                            viewMode === 'list' && "bg-white text-forest shadow-sm"
-                        )}
+                        className={cn("px-3", viewMode === 'list' && "bg-white text-forest shadow-sm")}
                         onClick={() => handleViewChange('list')}
                     >
                         <List size={18} />
@@ -96,7 +97,7 @@ export const TourSort = ({
                     >
                         {sortOptions.map((option) => (
                             <option key={option.value} value={option.value}>
-                                Sort by: {option.label}
+                                {t("label")} {t(`options.${option.labelKey}`)}
                             </option>
                         ))}
                     </select>

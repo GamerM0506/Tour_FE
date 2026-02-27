@@ -3,9 +3,10 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Fredoka } from 'next/font/google';
+import { Toaster } from "@/core/components/ui/sonner";
 import "@/app/globals.css";
-import { Header } from '@/features/landing/components/header';
-import { Footer } from '@/features/landing/components/footer';
+import ReactQueryProvider from '@/core/providers/react-query-provider';
+import { FloatingContact } from '@/components/common/FloatingContact';
 
 const fredoka = Fredoka({
   subsets: ['latin'],
@@ -37,13 +38,15 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${fredoka.variable} font-sans antialiased bg-sand text-jet`}>
-        <NextIntlClientProvider messages={messages}>
-          <main className="min-h-screen flex flex-col">
-            <Header />
-            {children}
-            <Footer />
-          </main>
-        </NextIntlClientProvider>
+        <ReactQueryProvider>
+          <NextIntlClientProvider messages={messages}>
+            <main className="min-h-screen flex flex-col">
+              {children}
+              <FloatingContact />
+            </main>
+            <Toaster />
+          </NextIntlClientProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

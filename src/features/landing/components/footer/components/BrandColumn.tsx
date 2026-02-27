@@ -2,12 +2,16 @@ import { Link } from "@/i18n/routing";
 import { cn } from "@/core/utils/cn";
 import { SocialIcons } from "./SocialIcons";
 import { Award, Globe } from "lucide-react";
+import { useTranslations } from "next-intl"; // Import
 
 interface BrandColumnProps {
     className?: string;
 }
 
 export const BrandColumn = ({ className }: BrandColumnProps) => {
+    const t = useTranslations("Footer.brand"); // Use namespace
+    const tBrand = useTranslations("Brand"); // Lấy tên Brand chung
+
     return (
         <div className={cn("space-y-6", className)}>
             <div className="space-y-4">
@@ -18,10 +22,10 @@ export const BrandColumn = ({ className }: BrandColumnProps) => {
                         </div>
                         <div>
                             <span className="font-serif text-3xl font-bold uppercase tracking-tighter text-sand block">
-                                Random Tours
+                                {tBrand("name")}
                             </span>
                             <span className="text-xs text-sand/40 tracking-widest uppercase">
-                                Vietnam Travel Excellence
+                                {t("tagline")}
                             </span>
                         </div>
                     </div>
@@ -30,23 +34,22 @@ export const BrandColumn = ({ className }: BrandColumnProps) => {
                 <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1.5 px-3 py-1.5 bg-sand/10 rounded-full">
                         <Award size={14} className="text-terracotta" />
-                        <span className="text-xs text-sand/70">Since 2010</span>
+                        <span className="text-xs text-sand/70">{t("since")}</span>
                     </div>
                     <div className="flex items-center gap-1.5 px-3 py-1.5 bg-sand/10 rounded-full">
                         <Globe size={14} className="text-terracotta" />
-                        <span className="text-xs text-sand/70">100+ Tours</span>
+                        <span className="text-xs text-sand/70">{t("tours_count")}</span>
                     </div>
                 </div>
             </div>
 
             <p className="text-sand/60 text-sm leading-relaxed max-w-xs">
-                We craft extraordinary journeys that connect you with Vietnam's authentic beauty,
-                hidden gems, and vibrant culture. Every trip is a story waiting to be written.
+                {t("description")}
             </p>
 
             <div className="space-y-3">
                 <span className="text-xs uppercase tracking-widest text-sand/40 block">
-                    Follow Our Journey
+                    {t("follow")}
                 </span>
                 <SocialIcons variant="default" />
             </div>
@@ -55,12 +58,12 @@ export const BrandColumn = ({ className }: BrandColumnProps) => {
                 <div className="flex items-center gap-4">
                     <div className="text-center">
                         <div className="font-serif text-xl text-terracotta font-bold">5,000+</div>
-                        <div className="text-xs text-sand/50">Happy Travelers</div>
+                        <div className="text-xs text-sand/50">{t("happy_travelers")}</div>
                     </div>
                     <div className="h-8 w-px bg-sand/10" />
                     <div className="text-center">
                         <div className="font-serif text-xl text-terracotta font-bold">98%</div>
-                        <div className="text-xs text-sand/50">Satisfaction</div>
+                        <div className="text-xs text-sand/50">{t("satisfaction")}</div>
                     </div>
                 </div>
             </div>

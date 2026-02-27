@@ -1,28 +1,28 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { cn } from "@/core/utils/cn";
-
 import { HeroBackground } from "./components/HeroBackground";
 import { HeroContent } from "./components/HeroContent";
 import { ScrollIndicator } from "./components/ScrollIndicator";
 import { HeroProps } from "./types";
+import { useRouter } from "@/i18n/routing"; // Dùng router của i18n
 
 export const Hero = ({
   className,
-  title,
-  subtitle,
-  description,
-  ctaText,
   imageUrl,
-  videoUrl,
   overlayOpacity,
-  showScrollIndicator = true
+  showScrollIndicator = true,
+  onCtaClick
 }: HeroProps) => {
-  const t = useTranslations("Hero");
+  const router = useRouter();
 
   const handleCtaClick = () => {
-    console.log("CTA clicked");
+    if (onCtaClick) {
+      onCtaClick();
+    } else {
+      // Mặc định chuyển hướng đến trang tours nếu không có hành động cụ thể
+      router.push("/tours");
+    }
   };
 
   return (
@@ -39,18 +39,15 @@ export const Hero = ({
         imageUrl={imageUrl}
         overlayOpacity={overlayOpacity}
       />
+
       <HeroContent
-        title={title || t("title") || "Discover the Untouched Vietnam"}
-        subtitle={subtitle || t("subtitle") || "The Art of Travel"}
-        description={description || t("description") || "Trải nghiệm những hành trình độc bản được thiết kế riêng cho tâm hồn yêu tự do và sự tinh tế."}
-        ctaText={ctaText || t("ctaText") || "Start Your Journey"}
         onCtaClick={handleCtaClick}
       />
 
       {showScrollIndicator && <ScrollIndicator />}
 
-      <div className="absolute top-10 left-10 w-32 h-32 border border-sand/10 rounded-full animate-spin-slow" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 border border-sand/5 rounded-full animate-pulse-slow" />
+      <div className="absolute top-10 left-10 w-32 h-32 border border-sand/10 rounded-full animate-spin-slow pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-48 h-48 border border-sand/5 rounded-full animate-pulse-slow pointer-events-none" />
     </section>
   );
 };
